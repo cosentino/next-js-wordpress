@@ -3,6 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function CoverImage({ title, coverImage, slug }) {
+  if (!coverImage?.sourceUrl) {
+    return <div className="sm:mx-0"></div>
+  }
   const image = (
     <Image
       width={2000}
